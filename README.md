@@ -32,9 +32,14 @@ sigmoid_prime(x) = sigmoid(x) * (1 - sigmoid(x))
 ## Gradient descent
 
 Weight update
-```Δwi = ηδxi``` 
+```Δwij = ηδjxi``` 
 
+## Error calculation
+### ZSSE
 The error term δ:
 ```δ=(y− ^y)f′(h)=(y−y^)f′(∑wixi)```
 - y - ^y is the output error
 - f'(h) is the derivative of the activation function
+
+### Mean square error
+E =  (1/2m) * ∑(y^mu - y^mu)^2
