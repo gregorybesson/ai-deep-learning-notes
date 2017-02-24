@@ -126,7 +126,7 @@ with tf.Session() as sess:
     print (output)
 ```
 
-# Gradient descent
+# stochastic gradient descent
 How to find the correct weights and biases which will predict our results with accuracy ?
 That is have a low distance for the correct class, but high distance for the wrong ones.
 
@@ -135,7 +135,7 @@ We may mesure our training loss (the distance average by all weights and biases)
 
 And we'll try to minimize that function: gradient descent !
 
-## stochastic gradient descent
+## why stochastic
 Computing the gradient descent from the training loss is an iterative process on potentially huge data set. it may be very long.
 We'll use a random little portion of the training data to measure the average loss and then will compute derivative of this average loss many many times (stochastic gradient descent) which will be more efficient than the regular gradient descent.
 
@@ -143,4 +143,23 @@ But because SGD (Stochastic Gradient Descent) is prone to errors, we have to car
 - Inputs should have a mean = 0 and equal variance (small).
 - Weights should be randomized, a mean = 0 and equal variance (small).
 
+we have also 2 techniques to minimize errors during SGD:
+
+## Momentum technique
+- running average of the direction of previous steps of the sgd
+
+## Learning rate decay
+- for each step of the sgd, we decrease the learning rate
+
+## hyper-parameters of a sgd
+- initial learning rate
+- learning rate decay
+- momentum
+- batch size
+- weight initialization
+
+These numerous hyper-parameters make the optimization of the deep-learning function hard. We then can use
+one approach calles ADAGRAD which takes care of initial learning rate, learning rate decay and momentum. It makes learning less sensitive to hyper-parameters.
+
 > SGD is the core of deep learning because it's efficient with big data and big models
+
