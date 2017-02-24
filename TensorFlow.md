@@ -55,6 +55,49 @@ The softmax function squashes it's inputs, typically called logits or logit scor
 x = tf.nn.softmax([2.0, 1.0, 0.2])
 ```
 
+example:
+```
+import tensorflow as tf
 
+def run():
+    output = None
+    logit_data = [2.0, 1.0, 0.1]
+    logits = tf.placeholder(tf.float32)
+    softmax = tf.nn.softmax(logits)   
+    
+    with tf.Session() as sess:
+        # TODO: Feed in the logit data
+        output = sess.run(softmax, feed_dict={logits: logit_data})
+    
+    return output
+```
 
+# transforming the probabilities into labels
+Transforming the labels into one-hot encoded vectors is done with scikit-learn using LabelBinarizer.
 
+example:
+```
+import numpy as np
+from sklearn import preprocessing
+
+# Example labels
+labels = np.array([1,5,3,2,1,4,2,1,3])
+
+# Create the encoder
+lb = preprocessing.LabelBinarizer()
+
+# Here the encoder finds the classes and assigns one-hot vectors 
+lb.fit(labels)
+
+# And finally, transform the labels into one-hot encoded vectors
+lb.transform(labels)
+>>> array([[1, 0, 0, 0, 0],
+           [0, 0, 0, 0, 1],
+           [0, 0, 1, 0, 0],
+           [0, 1, 0, 0, 0],
+           [1, 0, 0, 0, 0],
+           [0, 0, 0, 1, 0],
+           [0, 1, 0, 0, 0],
+           [1, 0, 0, 0, 0],
+           [0, 0, 1, 0, 0]])
+```
