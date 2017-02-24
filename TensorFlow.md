@@ -1,8 +1,11 @@
 # basic classes
 
 tf.Constant
+
 tf.Placeholder
+
 tf.Variable
+
 tf.Cast
 
  tf.global_variables_initializer() function to initialize the state of all the Variable tensors:
@@ -16,10 +19,10 @@ Linear functions
 
 ```y = xW + b```
 
-W is a matrix of the weights connecting 2 layers.
-y is the output
-x is the input vector
-b is the biases vector
+- W is a matrix of the weights connecting 2 layers.
+- y is the output
+- x is the input vector
+- b is the biases vector
 
 ```
 n_features = 120
