@@ -125,3 +125,22 @@ with tf.Session() as sess:
     output = sess.run(x_entropy, feed_dict={softmax:softmax_data, one_hot:one_hot_data})
     print (output)
 ```
+
+# Gradient descent
+How to find the correct weights and biases which will predict our results with accuracy ?
+That is have a low distance for the correct class, but high distance for the wrong ones.
+
+We may mesure our training loss (the distance average by all weights and biases)
+[image]
+
+And we'll try to minimize that function: gradient descent !
+
+## stochastic gradient descent
+Computing the gradient descent from the training loss is an iterative process on potentially huge data set. it may be very long.
+We'll use a random little portion of the training data to measure the average loss and then will compute derivative of this average loss many many times (stochastic gradient descent) which will be more efficient than the regular gradient descent.
+
+But because SGD (Stochastic Gradient Descent) is prone to errors, we have to carefully prepare our inputs and initial weights.
+- Inputs should have a mean = 0 and equal variance (small).
+- Weights should be randomized, a mean = 0 and equal variance (small).
+
+> SGD is the core of deep learning because it's efficient with big data and big models
