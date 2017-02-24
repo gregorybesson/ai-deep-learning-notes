@@ -20,7 +20,9 @@ Operations:
 - tf.multiply()
 - tf.divide()
 - tf.matmul(): matrix multiplication
-- tf.cast
+- tf.log()
+- tf.cast()
+- tf.reduce_sum(): ```x = tf.reduce_sum([1, 2, 3, 4, 5])  # 15```
 - feed_dict: in tf.session.run() ```output = sess.run(x, feed_dict={x: 'Hello World'})```
 - tf.global_variables_initializer() function to initialize the state of all the Variable tensors:
 ```
@@ -72,7 +74,7 @@ def run():
     return output
 ```
 
-# transforming the probabilities into labels
+# transforming the labels into vectors
 Transforming the labels into one-hot encoded vectors is done with scikit-learn using LabelBinarizer.
 
 example:
@@ -100,4 +102,26 @@ lb.transform(labels)
            [0, 1, 0, 0, 0],
            [1, 0, 0, 0, 0],
            [0, 0, 1, 0, 0]])
+```
+
+# Classify the results
+we use cross entropy as the cost function for classification of one-hot encoded labels.
+
+
+
+example:
+```
+import tensorflow as tf
+
+softmax_data = [0.7, 0.2, 0.1]
+one_hot_data = [1.0, 0.0, 0.0]
+
+softmax = tf.placeholder(tf.float32)
+one_hot = tf.placeholder(tf.float32)
+
+x_entropy = -tf.reduce_sum(tf.mul(one_hot, tf.log(softmax)))
+
+with tf.Session() as sess:
+    output = sess.run(x_entropy, feed_dict={softmax:softmax_data, one_hot:one_hot_data})
+    print (output)
 ```
