@@ -37,7 +37,8 @@ weights = tf.Variable(tf.truncated_normal((n_features, n_labels)))
 biases = tf.Variable(tf.zeros(n_labels))
 ```
 
-Linear functions
+# Calculating the output of the perceptrons
+Linear function
 
 ```y = xW + b```
 
@@ -46,6 +47,13 @@ Linear functions
 - x is the input vector
 - b is the biases vector
 
+# Transforming the output into a probability distribution
+Activation function softmax
+
+The softmax function squashes it's inputs, typically called logits or logit scores, to be between 0 and 1 and also normalizes the outputs such that they all sum to 1. This means the output of the softmax function is equivalent to a categorical probability distribution.
+```
+x = tf.nn.softmax([2.0, 1.0, 0.2])
+```
 
 
 
