@@ -14,7 +14,7 @@ with tf.Session() as sess:
 - tf.Variable
 - tf.Session
 
-Operations:
+Metods:
 - tf.add()
 - tf.subtract()
 - tf.multiply()
@@ -37,6 +37,12 @@ n_features = 120
 n_labels = 5
 weights = tf.Variable(tf.truncated_normal((n_features, n_labels)))
 biases = tf.Variable(tf.zeros(n_labels))
+```
+- tf.nn.relu():
+```
+hidden_layer = tf.add(tf.matmul(features, hidden_weights), hidden_biases)
+hidden_layer = tf.nn.relu(hidden_layer)
+logits = tf.add(tf.matmul(hidden_layer, output_weights), output_biases)
 ```
 
 # Calculating the output of the perceptrons
