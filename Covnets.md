@@ -57,6 +57,62 @@ Hyper-parameters:
 - stride
 - filter depth k
 
+## The convolutional layer
+```
+# Output depth
+k_output = 64
+
+# Image Properties
+image_width = 10
+image_height = 10
+color_channels = 3
+
+# Convolution filter
+filter_size_width = 5
+filter_size_height = 5
+
+# Input/Image
+input = tf.placeholder(
+    tf.float32,
+    shape=[None, image_height, image_width, color_channels])
+
+# Weight and bias
+weight = tf.Variable(tf.truncated_normal(
+    [filter_size_height, filter_size_width, color_channels, k_output]))
+bias = tf.Variable(tf.zeros(k_output))
+
+# Apply Convolution
+conv_layer = tf.nn.conv2d(input, weight, strides=[1, 2, 2, 1], padding='SAME')
+# Add bias
+conv_layer = tf.nn.bias_add(conv_layer, bias)
+# Apply activation function
+conv_layer = tf.nn.relu(conv_layer)
+```
+## Improving the convolutional layer
+
+The stride method is very information destructive. We could instead use pooling which tke all the convolutions in the neighborhood and combine them.
+
+### Max-Pooling
+y = max(Xi) We take the max of a neighborhood.
+Conceptually, the benefit of the max pooling operation is to reduce the size of the input, and allow the neural network to focus on only the most important elements. 
+
+ie. with a 2x2 filter and stride of 2:
+[[1, 0], [4, 6]] becomes 6, because 6 is the maximum value in this set
+
+A typical conv network is:
+- Image
+- Convolution
+- Max Pooling
+- Convolution
+- Max Pooling
+- Fully connected
+- Fully connected
+- Classifier
+
+## Average Pooling
+y = mean(Xi) We take the average of a neighborhood.
+
+
 ## Preventing overfitting
 
 - Early termination: We observe the performance of pur model on our validation set and stop when there is no improvement anymore.
