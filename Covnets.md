@@ -29,7 +29,7 @@ we define a width and height that defines a *filter* that will looks at patches 
 
 We can define a filter depth which is a set of different filters to improve the efficiency of the CNN.
 
-To determine the number of neurons we need to connect to a patch, it depends on the flter depth (k). Having multiple neurons for a given patch ensure that our CNN can learn to capture whatever characteristics the CNN learns are important.
+To determine the number of neurons we need to connect to a patch, it depends on the filter depth (k). Having multiple neurons for a given patch ensure that our CNN can learn to capture whatever characteristics the CNN learns are important.
 The volume of the output layer is:
 (W-F+2P)/S + 1
 
@@ -37,6 +37,14 @@ S: Stride
 W: Volume of our input layer
 F: Volume of our Filter (= height * width * depth)
 P: Padding
+
+The total of parameters (neurons) of the conv layer will be:
+(Hf * Wf * Df + 1) * (Ho * Wo * Do)
+
+Hf, Wf, Df: dimensions of the filter +1 for the bias
+Ho, Wo, Do: dimensions of the conv ooutput
+
+We see with this formula that each weight is assigned with each single part of the output.
 
 Hyper-parameters:
 - Filter width and height
