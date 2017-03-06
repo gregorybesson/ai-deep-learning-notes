@@ -14,7 +14,7 @@ with tf.Session() as sess:
 - tf.Variable
 - tf.Session
 
-Metods:
+Methods:
 - tf.add()
 - tf.subtract()
 - tf.multiply()
@@ -62,6 +62,26 @@ hidden_layer = tf.nn.dropout(hidden_layer, keep_prob)
 
 logits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])
 ```
+# Creating a convolutional layer
+We have an input of shape 32x32x3 (HxWxD)
+20 filters of shape 8x8x3 (HxWxD)
+A stride of 2 for both the height and width (S)
+Valid padding of size 1 (P)
+
+```
+input = tf.placeholder(tf.float32, (None, 32, 32, 3))
+filter_weights = tf.Variable(tf.truncated_normal((8, 8, 3, 20))) # (height, width, input_depth, output_depth)
+filter_bias = tf.Variable(tf.zeros(20))
+strides = [1, 2, 2, 1] # (batch, height, width, depth)
+padding = 'VALID'
+conv = tf.nn.conv2d(input, filter_weights, strides, padding) + filter_bias
+```
+
+The conv output shape can be calculated with: (W - F +2P)/S + 1
+(with TF, it will be [1, 13, 13, 20]instead of [1, 14, 14, 20] because of the algorithm used by TF)
+
+The number of parameters this conv layer have (nb of neurons) will be 
+
 # Calculating the output of the perceptrons
 Linear function
 
