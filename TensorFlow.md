@@ -38,7 +38,7 @@ n_labels = 5
 weights = tf.Variable(tf.truncated_normal((n_features, n_labels)))
 biases = tf.Variable(tf.zeros(n_labels))
 ```
-- tf.nn.relu():
+- tf.nn.relu() (Rectified Linear Unit)):
 ```
 hidden_layer = tf.add(tf.matmul(features, hidden_weights), hidden_biases)
 hidden_layer = tf.nn.relu(hidden_layer)
