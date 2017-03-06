@@ -1,9 +1,17 @@
 # Definition
 A convolutional network or convnet is a deep neural network to extract features from images. It is used to detect or identify objects in an image.
 
+
+## statistical invariants
+translation invariance : We want a cat to be recognized wether it's in the left corner of an image or the right one.
+
+Or the word kitten to be recognized wether it's at the begiining or at the end of a sentence.
+We'll use the concept of *weight sharing*
+
 ReLU : rectified linear unit.
 
 We'll build a multilayer neural network 
+
 
 
 Preventing overfitting
