@@ -31,7 +31,9 @@ We can define a filter depth which is a set of different filters to improve the 
 
 To determine the number of neurons we need to connect to a patch, it depends on the filter depth (k). Having multiple neurons for a given patch ensure that our CNN can learn to capture whatever characteristics the CNN learns are important.
 The volume of the output layer is:
+```
 (W-F+2P)/S + 1
+```
 
 S: Stride
 W: Volume of our input layer
