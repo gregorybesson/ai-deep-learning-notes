@@ -62,6 +62,16 @@ hidden_layer = tf.nn.dropout(hidden_layer, keep_prob)
 
 logits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])
 ```
+- tf.nn.conv2d():
+```
+input = tf.placeholder(tf.float32, (None, 32, 32, 3))
+filter_weights = tf.Variable(tf.truncated_normal((8, 8, 3, 20))) # (height, width, input_depth, output_depth)
+filter_bias = tf.Variable(tf.zeros(20))
+strides = [1, 2, 2, 1] # (batch, height, width, depth)
+padding = 'VALID'
+conv = tf.nn.conv2d(input, filter_weights, strides, padding) + filter_bias
+```
+
 # Creating a convolutional layer
 We have an input of shape 32x32x3 (HxWxD)
 20 filters of shape 8x8x3 (HxWxD)
@@ -115,6 +125,18 @@ conv_layer = tf.nn.conv2d(input, weight, strides=[1, 2, 2, 1], padding='SAME')
 conv_layer = tf.nn.bias_add(conv_layer, bias)
 # Apply activation function
 conv_layer = tf.nn.relu(conv_layer)
+```
+# Max Pooling
+```
+conv_layer = tf.nn.conv2d(input, weight, strides=[1, 2, 2, 1], padding='SAME')
+conv_layer = tf.nn.bias_add(conv_layer, bias)
+conv_layer = tf.nn.relu(conv_layer)
+# Apply Max Pooling
+conv_layer = tf.nn.max_pool(
+    conv_layer,
+    ksize=[1, 2, 2, 1],
+    strides=[1, 2, 2, 1],
+    padding='SAME')
 ```
 # Calculating the output of the perceptrons
 Linear function
