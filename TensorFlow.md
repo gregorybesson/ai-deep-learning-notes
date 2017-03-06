@@ -52,6 +52,16 @@ y = tf.placeholder("float", [None, n_classes])
 
 x_flat = tf.reshape(x, [-1, n_input])
 ```
+- tf.nn.dropout() (during training, keep_prob=0.5, during testing, keep_prob = 1):
+```
+keep_prob = tf.placeholder(tf.float32) # probability to keep units
+
+hidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])
+hidden_layer = tf.nn.relu(hidden_layer)
+hidden_layer = tf.nn.dropout(hidden_layer, keep_prob)
+
+logits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])
+```
 # Calculating the output of the perceptrons
 Linear function
 
