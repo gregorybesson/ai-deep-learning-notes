@@ -90,7 +90,7 @@ conv_layer = tf.nn.relu(conv_layer)
 ```
 ## Improving the convolutional layer
 
-The stride method is very information destructive. We could instead use pooling which tke all the convolutions in the neighborhood and combine them.
+The stride method is very information destructive. We could instead use pooling which take all the convolutions in the neighborhood and combine them.
 
 ### Max-Pooling
 y = max(Xi) We take the max of a neighborhood.
@@ -109,11 +109,12 @@ A typical conv network is:
 - Fully connected
 - Classifier
 
-## Average Pooling
+### Average Pooling
 y = mean(Xi) We take the average of a neighborhood.
 
+These methods have lost ground and are replaced by the dropout method, more reliable and efficient.
 
-## Preventing overfitting
+### Preventing overfitting
 
 - Early termination: We observe the performance of pur model on our validation set and stop when there is no improvement anymore.
 
@@ -121,6 +122,8 @@ y = mean(Xi) We take the average of a neighborhood.
   - L2 regularization: We add another term to the loss, which penalize large weights (we add the L2 norm of the weight to the loss multiplied by a small constant)
   - Dropout: The values that come from one layer to another one are called activations. Let's set randomly half of them  to zero and scale the remaining activations by a factor of 2. It makes your model creating redundant representations, which makes your model more robust and prevents overfitting. Dropout produces an ensemble of training. As we want the consensus when we evaluate the model. We do average the activations
 
+### Inception modules
+Instead od choosing a max-pool layer or 1X1 conv, or 3X3, or 5X5 ... let's use them all. A the top, we just do the composition of all the results
 
 # Step1: Preprocessing data
 ## Normalize images
