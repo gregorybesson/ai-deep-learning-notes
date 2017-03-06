@@ -46,6 +46,12 @@ Ho, Wo, Do: dimensions of the conv ooutput
 
 We see with this formula that each weight is assigned with each single part of the output.
 
+### Number of parameters of a convolutional layer
+instead of making our neurons share their parameters with ALL other neurons of all Channels, we'll take the number of parameters in the convolutional layer, if every neuron in the output layer shares its parameters with every other neuron in its *same channel* (the same depth).
+
+(Hf * Wf * Df + 1) * Do
+
+
 Hyper-parameters:
 - Filter width and height
 - stride
