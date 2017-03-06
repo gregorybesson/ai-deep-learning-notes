@@ -80,7 +80,11 @@ conv = tf.nn.conv2d(input, filter_weights, strides, padding) + filter_bias
 The conv output shape can be calculated with: (W - F +2P)/S + 1
 (with TF, it will be [1, 13, 13, 20]instead of [1, 14, 14, 20] because of the algorithm used by TF)
 
-The number of parameters this conv layer have (nb of neurons) will be 
+The number of parameters this conv layer have (nb of neurons) will be, if every neuron in the output layer shares its parameters with every other neuron in its same channel:
+(Dimensions of the filter +1 (the bias)) * (Depth of the conv layer)
+
+here : (8 * 8 * 3 + 1) * 20 = 3840weights + 20biases = 3860
+
 
 # Calculating the output of the perceptrons
 Linear function
