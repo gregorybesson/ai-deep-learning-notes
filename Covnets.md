@@ -21,8 +21,8 @@ We'll build a multilayer neural network
 ### Patches
 We extract *patches* or *kernels* from an image. The depth being the colors. Each layer of the image is called a *feature map*.
 To parse the whole image, we'll use a *stride* to shift patches from stride pixels at a time.
-valid padding: we stay inside the image
-same padding: we add zeros to the border of the image => The output map size will be exactly the same as the input map size.
+- valid padding: we stay inside the image
+- same padding: we add zeros to the border of the image => The output map size will be exactly the same as the input map size.
 
 ### Filter
 we define a width and height that defines a *filter* that will looks at patches of the image (patches are the same size as the filter). The filter groups together adjacent pixels and treats them as collectve. This is because adjacent pixels have a special meaning to each other. Our CNN will learn how to classify local patterns.
