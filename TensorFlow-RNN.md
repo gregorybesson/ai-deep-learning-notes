@@ -1,4 +1,4 @@
-Here is the process to create a RNN dedicated to text with Tensorflow
+Here is the process to create a RNN dedicated to text with TensorFlow
 
 # Get the data
 ## Explore the data
