@@ -18,5 +18,6 @@ book : http://www.deeplearningbook.org/
 - LSTM (Long short term memory network) : http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 - LSTM explained : http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
-
-
+## Specific projects
+- This tutorial shows how to use RNNs for speech recognition https://svds.com/tensorflow-rnn-tutorial/
+- Skip-Thoughts model is a sentence encoder. It learns to encode input sentences into a fixed-dimensional vector representation that is useful for many tasks: https://github.com/tensorflow/models/tree/master/skip_thoughts
