@@ -22,3 +22,9 @@ book : http://www.deeplearningbook.org/
 ## Specific projects
 - This tutorial shows how to use RNNs for speech recognition https://svds.com/tensorflow-rnn-tutorial/
 - Skip-Thoughts model is a sentence encoder. It learns to encode input sentences into a fixed-dimensional vector representation that is useful for many tasks: https://github.com/tensorflow/models/tree/master/skip_thoughts
+
+## Reinforcement learning
+- Simple Reinforcement Learning with Tensorflow: https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0
+- Human-level control through deep reinforcement learning: http://www.davidqiu.com:8888/research/nature14236.pdf
+- Tensorflow implementation of Human-Level Control through Deep Reinforcement Learning: https://github.com/devsisters/DQN-tensorflow
+- Cart-Pole Balancing with Q-Learning: https://medium.com/@tuzzer/cart-pole-balancing-with-q-learning-b54c6068d947
