@@ -14,7 +14,10 @@ Full stanford course "NLP with Deep Learning": https://www.youtube.com/playlist?
 # Deep learning
 book : http://www.deeplearningbook.org/
 
-## Neural networks
+## Convolutional Neural Networks
+- https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4
+
+## Recurrent Neural Networks
 - RNN (Reccurent Neural Network): https://www.youtube.com/watch?v=iX5V1WpxxkY
 - LSTM (Long short term memory network): http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 - LSTM explained: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
