@@ -19,6 +19,13 @@ book : http://www.deeplearningbook.org/
 - LSTM (Long short term memory network): http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 - LSTM explained: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
+## Seq2Seq
+https://github.com/ematvey/tensorflow-seq2seq-tutorials has a working version of the current TensorFlow seq2seq APIs
+https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html is a dataset of conversations extracted from movie scripts
+https://github.com/chiphuyen/tf-stanford-tutorials/tree/master/assignments/chatbot has an script that preprocesses the Cornell corpus
+http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/
+https://www.youtube.com/watch?v=G5RY_SUJih4 - Incredible talk. Uses a solid example
+
 ## Specific projects
 - This tutorial shows how to use RNNs for speech recognition https://svds.com/tensorflow-rnn-tutorial/
 - Skip-Thoughts model is a sentence encoder. It learns to encode input sentences into a fixed-dimensional vector representation that is useful for many tasks: https://github.com/tensorflow/models/tree/master/skip_thoughts
